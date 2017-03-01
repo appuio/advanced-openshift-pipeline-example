@@ -23,9 +23,9 @@ The Images are built in the builder-project and then promoted from stage to stag
 
 Instantiate Pipeline and Example Project 
 
-´´´
+```
 oc new-app -f https://raw.githubusercontent.com/appuio/advanced-openshift-pipeline-example/master/ocp-template.yaml
-´´´
+```
 
 the Jenkins and Jenkinsslave is instantiated automatically, the pipeline can now be triggered via Bulds --> Pipeline
 
@@ -34,15 +34,15 @@ the Jenkins and Jenkinsslave is instantiated automatically, the pipeline can now
 
 To be able to read images from the builder project, the prod project needs puller rigts
 
-´´´
+```
 oc policy add-role-to-group system:image-puller system:serviceaccounts:prod-project -n builder-project
-´´´
+```
 
 update the tag on the prod project, to promote the new image
 
-´´´
+```
 oc tag builder-project/image:latest prod-project/image:latest
-´´´
+```
 
 
 ## TODO
