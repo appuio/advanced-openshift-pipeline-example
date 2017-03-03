@@ -103,14 +103,14 @@ objects:
     name: sample-pipeline
   spec:
     source:
-        git:
-          ref: master
-          uri: https://github.com/openshift/ruby-ex.git
-        type: Git
-      strategy:
-        jenkinsPipelineStrategy:
-          jenkinsfilePath: Jenkinsfile
-        type: JenkinsPipeline
+      git:
+        ref: master
+        uri: https://github.com/openshift/ruby-ex.git
+      type: Git
+    strategy:
+      jenkinsPipelineStrategy:
+        jenkinsfilePath: Jenkinsfile
+      type: JenkinsPipeline
     triggers:
     - github:
         secret: secret101
